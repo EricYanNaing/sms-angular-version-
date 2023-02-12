@@ -1,0 +1,532 @@
+<div class="main-content p-3">
+  <h4 class="font-w600 title m-2 mr-auto ">Sugar Mill Factory</h4>
+
+  <div class="row mx-1 my-4">
+    <div class="col-md-4 ">
+      <div class="my-3">
+        <label for="">Select SMS Send Type </label>
+      </div>
+      <div>
+        <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select"
+          [(ngModel)]="sugar_mill_factory">
+          <mat-option value=1>Bulk</mat-option>
+          <mat-option value=2>Individual</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-8"></div>
+  </div>
+  <div *ngIf="sugar_mill_factory === '1'">
+    <div class="row mx-1 my-4">
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">SMS in English</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+           
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+         matInput #message maxlength="160" ></textarea>
+     
+         <mat-hint align="end">{{message.value.length}} / 160</mat-hint>
+       </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">SMS in Zawgyi</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+           
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+         matInput #message1 maxlength="160" ></textarea>
+     
+         <mat-hint align="end">{{message1.value.length}} / 160</mat-hint>
+       </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">SMS in Unicode</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+           
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+         matInput #message2 maxlength="160" ></textarea>
+     
+         <mat-hint align="end">{{message2.value.length}} / 160</mat-hint>
+       </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-4">
+      <div class="col-md-6">
+        <div class="my-3">
+          <label for="">Remarks</label>
+        </div>
+        <mat-form-field appearance="fill" class="text-area">
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5">
+                </textarea>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <div class="col-12 d-flex justify-content-end align-items-center create-user mt-5">
+          <input accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="btn mx-3 "
+            id="bulk-upload1" type="file">
+          <label class="bulk-upload mr-4" for="bulk-upload"><img
+              src="../../../../../assets/img/Icon/Upload other-02.svg" class="arrowIcon mx-2" alt="">
+            Upload</label>
+          <button class="btn btn-primary mx-3" style="padding: 0.6rem 0;width: 150px;" type="button">
+            <a class="text-decoration-none " href="../~$Sugar%20Mill%20Upload%20Sample.xlsx">
+              <img src="../../../../../assets/img/Icon/Upload other-01.svg" class="arrowIcon mx-2" alt="">
+              <span class="ml-2 text-white">Download Format</span>
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-3 my-5">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="fileRefNo">
+          <th mat-header-cell *matHeaderCellDef> File Reference Number</th>
+          <td mat-cell *matCellDef="let element"> {{element.fileRefNo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef> File Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.fileName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobileNoCount">
+          <th mat-header-cell *matHeaderCellDef> Mobile Number Count </th>
+          <td mat-cell *matCellDef="let element"> {{element.mobileNoCount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="smsInEng">
+          <th mat-header-cell *matHeaderCellDef> SMS In English </th>
+          <td mat-cell *matCellDef="let element"> {{element.smsInEng}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="smsInZaw">
+          <th mat-header-cell *matHeaderCellDef> SMS In Zawgyi </th>
+          <td mat-cell *matCellDef="let element"> {{element.smsInZaw}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="smsInUni">
+          <th mat-header-cell *matHeaderCellDef> SMS In Unicode </th>
+          <td mat-cell *matCellDef="let element"> {{element.smsInUni}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="smsInValueDatenTime">
+          <th mat-header-cell *matHeaderCellDef> SMS In Value Date & Time </th>
+          <td mat-cell *matCellDef="let element"> {{element.smsInValueDatenTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef> View </th>
+          <td mat-cell *matCellDef="let element">   <img class="actionImage" [src]="element.view" /></td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <div class="row my-5 mx-3">
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group mx-1"
+        [(ngModel)]="radioBtn">
+        <mat-radio-button class="example-radio-button pe-5 " *ngFor="let radio of radios" [value]="radio">
+          {{radio}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <div class="col-md-6"></div>
+    </div>
+
+    <div class="row mx-1 my-4" *ngIf="radioBtn==='Send Now'"></div>
+
+    <div class="row mx-1 my-2" *ngIf="radioBtn==='Schedule'">
+      <div class="col-md-4 ">
+        <div class="my-3">
+          <label for="">Select Frequency <span>*</span> </label>
+        </div>
+        <div>
+          <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select">
+            <mat-option value=1>Today</mat-option>
+            <mat-option value=2>Daily</mat-option>
+            <mat-option value=3>Weekly</mat-option>
+            <mat-option value=4>Monthly</mat-option>
+            <mat-option value=5>Quaterly</mat-option>
+            <mat-option value=6>Half-Yearly</mat-option>
+            <mat-option value=7>Yearly</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">Select Period Date  <span class="red">*</span></label>
+        </div>
+        <input
+        type="text"
+        placeholder="From Date - To Date"
+        class="form-control datepicker"
+  
+        bsDaterangepicker
+        [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+        [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>  
+      </div>
+      <div class="col-md-4 ngx-timepicker-field-example">
+        <span class="CustomFormLabel">
+          Select Period Time (24 hours) <span class="red">*</span>
+        </span>
+        <div class="d-flex">
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 barRow" *ngIf="radioBtn==='Schedule'">
+      <div class="col-md-4">
+        <br>
+        <div class="my-3">
+          <mat-form-field floatLabel="always">
+            <mat-label class="labelInput">Frequency Count <span class="red">*</span></mat-label>
+            <input matInput class="userRolePermissionFormField2" placeholder="Enter Value">
+            <mat-icon matSuffix></mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 " *ngIf="radioBtn==='Custom'">
+      <div class="col-md-4 ">
+        <div class="my-3">
+          <label for="">Select Frequency <span>*</span> </label>
+        </div>
+        <div>
+          <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select">
+            <mat-option value=1>Today</mat-option>
+            <mat-option value=2>Daily</mat-option>
+            <mat-option value=3>Weekly</mat-option>
+            <mat-option value=4>Monthly</mat-option>
+            <mat-option value=5>Quaterly</mat-option>
+            <mat-option value=6>Half-Yearly</mat-option>
+            <mat-option value=7>Yearly</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">Select Period Date  <span class="red">*</span></label>
+        </div>
+        <input
+        type="text"
+        placeholder="From Date - To Date"
+        class="form-control datepicker"
+  
+        bsDaterangepicker
+        [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+        [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>  
+      </div>
+      <div class="col-md-4 ngx-timepicker-field-example">
+        <span class="CustomFormLabel">
+          Select Period Time (24 hours) <span class="red">*</span>
+        </span>
+        <div class="d-flex">
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 barRow" *ngIf="radioBtn==='Custom'">
+      <div class="col-md-4">
+        <br>
+        <div class="my-3">
+          <mat-form-field floatLabel="always">
+            <mat-label class="labelInput">Number Of Message <span class="red">*</span></mat-label>
+            <input matInput class="userRolePermissionFormField2" placeholder="Enter Value">
+            <mat-icon matSuffix></mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <mat-toolbar>
+      <div class="button_group" *ngIf="radioBtn==='Send Now'">
+        <button class="cancel" [routerLink]="'../'">CANCEL</button>
+        <button class="send" [routerLink]="'../'"> SEND</button>
+      </div>
+
+      <div class="button_group" *ngIf="radioBtn==='Schedule'">
+        <button class="cancel" [routerLink]="'../'">CANCEL</button>
+        <button class="save" [routerLink]="'../'"> SAVE</button>
+      </div>
+
+        <div class="button_group" *ngIf="radioBtn==='Custom'">
+          <button class="cancel" [routerLink]="'../'">CANCEL</button>
+          <button class="save" [routerLink]="'../'"> SAVE</button>
+        </div>
+    </mat-toolbar>
+  </div>
+
+  <div *ngIf="sugar_mill_factory === '2'">
+
+    <div class="row">
+      <div class="col-md-8"></div>
+      <div class="col-md-4 ">
+        <div class="add_button_div d-flex flex-column align-items-end p-4">
+          <button class="btn btn-warning" (click)="addMobile()"><img src="assets/img/Icon/Add pattern.svg" class="action-img"><span>ADD</span></button>
+          <p class="text-danger">*(Maximum Allow Add 5 Mobile Numbers)</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-1"  *ngFor="let item of mobileNumberFields">
+      <div class="col-md-4">
+        <br>
+        <div class="ml-2">
+          <label for="">Mobile Number</label>
+        </div>
+        <div class="mobile_field">
+           
+         
+          <form class="example-form">
+            <mat-form-field class="mobileNo example-full-width " appearance="fill">
+              <span matPrefix>+95 &nbsp;</span>
+              <input type="tel" matInput  class="" placeholder="09xxxxxxxxx" value="" maxlength="9" [(ngModel)]="item.mobileNumberValue" [ngModelOptions]="{standalone: true}"
+              minlength="9">
+            
+            </mat-form-field>
+          </form>
+            <!-- <form class="example-form">
+              <mat-form-field class="mobileNo example-full-width " appearance="fill">
+                <span matPrefix>+95 &nbsp;</span>
+                <input type="tel" matInput  class="" placeholder="09xxxxxxxxx" value="" maxlength="9"
+                [(ngModel)]="item.mobileNumberValue" minlength="9">
+              
+              </mat-form-field>
+            </form> -->
+        </div>
+
+       
+      </div>
+
+      <div class="col-md-4 m-5">
+        <div style="display: inline;" *ngIf="item.mobileNumberValue !== ''">
+          <img src="assets/img/Icon/Delete Icon.png" alt="" class="action-img" (click)="deleteMobile(item)"><img src="assets/img/Icon/Yes.svg" alt="" style="width: 30px; ">
+          <span>MPT (Merchant)</span>
+      </div>
+      </div>
+    
+    </div>
+
+    <div class="row mx-1 my-4">
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">SMS in English</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+           
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+         matInput #message maxlength="160" ></textarea>
+     
+         <mat-hint align="end">{{message.value.length}} / 160</mat-hint>
+       </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">SMS in Zawgyi</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+           
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+         matInput #message1 maxlength="160" ></textarea>
+     
+         <mat-hint align="end">{{message1.value.length}} / 160</mat-hint>
+       </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">SMS in Unicode</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+           
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+         matInput #message2 maxlength="160" ></textarea>
+     
+         <mat-hint align="end">{{message2.value.length}} / 160</mat-hint>
+       </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-4">
+      <div class="col-md-6">
+        <div class="my-3">
+          <label for="">Remarks</label>
+        </div>
+        <mat-form-field appearance="fill" class="text-area">
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5">
+              </textarea>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="row my-5 mx-3">
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group mx-1"
+        [(ngModel)]="radioBtn">
+        <mat-radio-button class="example-radio-button pe-5 " *ngFor="let radio of radios" [value]="radio">
+          {{radio}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <div class="col-md-6"></div>
+    </div>
+
+    <div class="row mx-1 my-4" *ngIf="radioBtn==='Send Now'"></div>
+
+    <div class="row mx-1 my-2" *ngIf="radioBtn==='Schedule'">
+      <div class="col-md-4 ">
+        <div class="my-3">
+          <label for="">Select Frequency <span>*</span> </label>
+        </div>
+        <div>
+          <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select">
+            <mat-option value=1>Today</mat-option>
+            <mat-option value=2>Daily</mat-option>
+            <mat-option value=3>Weekly</mat-option>
+            <mat-option value=4>Monthly</mat-option>
+            <mat-option value=5>Quaterly</mat-option>
+            <mat-option value=6>Half-Yearly</mat-option>
+            <mat-option value=7>Yearly</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">Select Period Date  <span class="red">*</span></label>
+        </div>
+        <input
+        type="text"
+        placeholder="From Date - To Date"
+        class="form-control datepicker"
+  
+        bsDaterangepicker
+        [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+        [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>  
+      </div>
+      <div class="col-md-4 ngx-timepicker-field-example">
+        <span class="CustomFormLabel">
+          Select Period Time (24 hours) <span class="red">*</span>
+        </span>
+        <div class="d-flex">
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 barRow" *ngIf="radioBtn==='Schedule'">
+      <div class="col-md-4">
+        <br>
+        <div class="my-3">
+          <mat-form-field floatLabel="always">
+            <mat-label class="labelInput">Frequency Count <span class="red">*</span></mat-label>
+            <input matInput class="userRolePermissionFormField2" placeholder="Enter Value">
+            <mat-icon matSuffix></mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 " *ngIf="radioBtn==='Custom'">
+      <div class="col-md-4 ">
+        <div class="my-3">
+          <label for="">Select Frequency <span>*</span> </label>
+        </div>
+        <div>
+          <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select">
+            <mat-option value=1>Today</mat-option>
+            <mat-option value=2>Daily</mat-option>
+            <mat-option value=3>Weekly</mat-option>
+            <mat-option value=4>Monthly</mat-option>
+            <mat-option value=5>Quaterly</mat-option>
+            <mat-option value=6>Half-Yearly</mat-option>
+            <mat-option value=7>Yearly</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-3">
+          <label for="">Select Period Date  <span class="red">*</span></label>
+        </div>
+        <input
+        type="text"
+        placeholder="From Date - To Date"
+        class="form-control datepicker"
+  
+        bsDaterangepicker
+        [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+        [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>  
+      </div>
+      <div class="col-md-4 ngx-timepicker-field-example">
+        <span class="CustomFormLabel">
+          Select Period Time (24 hours) <span class="red">*</span>
+        </span>
+        <div class="d-flex">
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 barRow" *ngIf="radioBtn==='Custom'">
+      <div class="col-md-4">
+        <br>
+        <div class="my-3">
+          <mat-form-field floatLabel="always">
+            <mat-label class="labelInput">Number Of Message <span class="red">*</span></mat-label>
+            <input matInput class="userRolePermissionFormField2" placeholder="Enter Value">
+            <mat-icon matSuffix></mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <mat-toolbar>
+      <div class="button_group" *ngIf="radioBtn==='Send Now'">
+        <button class="cancel" [routerLink]="'../'">CANCEL</button>
+        <button class="send" [routerLink]="'../'"> SAVE</button>
+      </div>
+
+      <div class="button_group" *ngIf="radioBtn==='Schedule'">
+        <button class="cancel" [routerLink]="'../'">CANCEL</button>
+        <button class="save" [routerLink]="'../'"> SAVE</button>
+      </div>
+
+        <div class="button_group" *ngIf="radioBtn==='Custom'">
+          <button class="cancel" [routerLink]="'../'">CANCEL</button>
+          <button class="save" [routerLink]="'../'"> SAVE</button>
+        </div>
+    </mat-toolbar>
+  </div>

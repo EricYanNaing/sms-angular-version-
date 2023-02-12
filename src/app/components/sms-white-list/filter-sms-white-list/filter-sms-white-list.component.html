@@ -1,0 +1,334 @@
+<div class="main-content">
+
+  <div class="row mx-2 my-4">
+    <h4>SMS White List</h4>
+    <!-- <div>
+          <label for="">Select SMS Service Type </label>
+      </div> -->
+    <!-- <div>
+          <mat-select class="select"  panelClass="myPanelClass1" disableOptionCentering placeholder="Select">
+              <mat-option value=1 >OTP</mat-option>
+              <mat-option value=2 >OTP Registration</mat-option>
+              <mat-option value=3 >OTP Re-verify</mat-option>
+              <mat-option value=4 >Pay To</mat-option>
+              <mat-option value=5 >Top Up Recharge</mat-option>
+              <mat-option value=6 >OTP SIM Changing</mat-option>
+              <mat-option value=7 >OTP Device Changing</mat-option>
+              <mat-option value=8 >New SMS Template</mat-option>
+              <mat-option value=9 >DTH</mat-option>
+              <mat-option value=10 >Gift Card</mat-option>
+          </mat-select>
+      </div> -->
+  </div>
+
+  <div class="row mx-1 my-4">
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select Stop Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select" 
+         [(ngModel)]="sms_white_list">
+        
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+          fxLayoutAlign="space-between center">
+
+          <button fxLayout="row" mat-button class="check_uncheck_btn">
+            <mat-icon class="secondary-text s-5">
+              check</mat-icon>Check All
+          </button>
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+            <mat-icon class="secondary-text s-5">
+              clear</mat-icon>Uncheck All
+          </button>
+        </div>
+        <mat-option value=1>Source</mat-option>
+        <mat-option value=2>Destination</mat-option>
+        <mat-option value=3>Individual</mat-option>
+        
+
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select Account Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Personal</mat-option>
+          <mat-option value=2>Merchant</mat-option>
+          <mat-option value=3>Advance Merchant</mat-option>
+          <mat-option value=4>Safety Cashier</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="">Select SMS Service Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" disableOptionCentering
+          panelClass="myPanelClass" multiple placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+
+          <mat-option value=4>Pay To</mat-option>
+          <mat-option value=5>Top Up Recharge</mat-option>
+          <mat-option value=1>OTP SIM Changing</mat-option>
+          <mat-option value=2>OTP Device Changing</mat-option>
+          <mat-option value=3>DTH</mat-option>
+          <mat-option value=4>Gift Card</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mx-1 my-4">
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select Operator Name</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>MPT</mat-option>
+          <mat-option value=2>Telenor</mat-option>
+          <mat-option value=3>Ooredoo</mat-option>
+          <mat-option value=4>MECTEL</mat-option>
+          <mat-option value=5>Mytel</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select OS Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Android</mat-option>
+          <mat-option value=2>IOS</mat-option>
+
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="">Select OS Version</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" disableOptionCentering
+          panelClass="myPanelClass" multiple placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+
+          <mat-option value=1>IOS 7</mat-option>
+          <mat-option value=2>IOS 8</mat-option>
+          <mat-option value=3>IOS 9</mat-option>
+          <mat-option value=4>Android 10</mat-option>
+          <mat-option value=5>Android 11</mat-option>
+          <mat-option value=6>Android 12</mat-option>
+
+        </mat-select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mx-1 my-4">
+    <div class="col-md-4">
+      <div class="">
+        <label for="">Mobile Number</label>
+      </div>
+      <div class="mt-2">
+
+        <input type="text" class="input userRolePermissionFormField" placeholder="Enter Mobile Number">
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="">
+        <label for="">Date</label>
+      </div>
+      <input type="text" placeholder="From Date - To Date" class="form-control datepicker" bsDaterangepicker
+        [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+        [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>   
+    </div>
+  </div>
+
+  <mat-toolbar  >
+    <div class="button_group" *ngIf="sms_white_list == '1'|| sms_white_list =='2' || sms_white_list =='3'">
+      <button class="clear" mat-button >Clear</button>
+      <button class="search" mat-button (click)="toggleShow()">Search</button>
+    </div>
+
+  </mat-toolbar>
+  <div>
+    <!-- table -->
+    <div class="d-flex justify-content-end"  *ngIf="isShown">
+      <img class="crud-btns" matTooltip="Excel Download"
+        aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/excel.svg" alt="">
+
+    </div>
+    <div class="secondary-table-pagination"  *ngIf="isShown">
+     
+       
+ 
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="stop">
+          <th mat-header-cell *matHeaderCellDef> Stop Type</th>
+          <td mat-cell *matCellDef="let element"> {{element.stop}} </td>
+        </ng-container>
+        <ng-container matColumnDef="account">
+          <th mat-header-cell *matHeaderCellDef> Account Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.account}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ServiceType">
+          <th mat-header-cell *matHeaderCellDef> SMS Service Type</th>
+          <td mat-cell *matCellDef="let element"> {{element.ServiceType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="operatorName">
+          <th mat-header-cell *matHeaderCellDef>Operator Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.operatorName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="osType">
+          <th mat-header-cell *matHeaderCellDef>OS Type</th>
+          <td mat-cell *matCellDef="let element"> {{element.osType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="osVersion">
+          <th mat-header-cell *matHeaderCellDef> OS Version</th>
+          <td mat-cell *matCellDef="let element"> {{element.osVersion}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="okApp">
+          <th mat-header-cell *matHeaderCellDef> OK$ App Version </th>
+          <td mat-cell *matCellDef="let element"> {{element.okApp}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="buildNumber">
+          <th mat-header-cell *matHeaderCellDef>Build Number </th>
+          <td mat-cell *matCellDef="let element"> {{element.buildNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobileNumber">
+          <th mat-header-cell *matHeaderCellDef>Mobile Number </th>
+          <td mat-cell *matCellDef="let element"> {{element.mobileNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="noOfAcc">
+          <th mat-header-cell *matHeaderCellDef> Number Of Account Count </th>
+          <td mat-cell *matCellDef="let element"> {{element.noOfAcc}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateTime">
+          <th mat-header-cell *matHeaderCellDef> Date & Time </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <!-- <a routerLink="./">
+              <img class="actionImage" [src]="element.action" />
+              
+            </a> -->
+            <button class="btn btn-success" (click)="openDialog()">White List</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns,sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+   
+    </div>
+    <mat-toolbar  *ngIf="isShown">
+      <mat-paginator class="mat-paginator-user-role-permission" [pageSizeOptions]="[10,20, 25, 50, 100]"
+        showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </mat-toolbar>
+
+  </div>
+</div>

@@ -1,0 +1,273 @@
+.sel1{
+    height: 50px;
+    outline: none;
+    margin-bottom: 10px;
+    width: 90% !important;
+    padding: 15px 15px;
+    &:focus{
+      box-shadow: #dfd6c2 3px 3px 3px 0px;
+    }
+    /*select box css*/
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: white;
+  }
+  .sel2{
+    height: 50px;
+    outline: none;
+    margin-bottom: 10px;
+    width: 90% !important;
+    padding: 15px 15px;
+    &:focus{
+      box-shadow: #dfd6c2 3px 3px 3px 0px;
+    }
+    /*select box css*/
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: white;
+  }
+
+  .filter_select_header {
+    background: #dfd6c2;
+    display: flex;
+}
+
+textarea.mat-input-element.cdk-textarea-autosize {
+
+  height: 50px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 85% !important;
+  padding: 15px 15px;
+  /*select box css*/
+  border-radius: 25px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  background-color: white;
+}
+textarea.mat-input-element.cdk-textarea-autosize2 {
+  height: 50px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100% !important;
+  padding: 15px 15px;
+  /*select box css*/
+  border-radius: 25px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  background-color: white;
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.modalTable{
+  overflow: scroll;
+}
+.modalTable table {
+  width: 100%;
+}
+.modalTable table
+{
+  width: 100%;
+  white-space: nowrap;
+}
+.modalTable tr
+{
+  border: 1px solid #d6c7ec;
+}
+.modalTable table th {
+  background: #ffb81c;
+  font-size: 16px;
+  padding-right: 24px;
+  white-space: nowrap;
+  border-right: 1px solid #d6c7ec;
+  text-align: center;
+  font-weight: 700;
+  padding: 0px 25px;
+}
+.modalTable table td{
+  text-align: left;
+  border-right: 1px solid #d6c7ec;
+  text-align: center;
+  font-weight: 600;
+  padding: 0px 25px;
+}
+
+input.input, input.inputt {
+  height: 48px;
+  border: none;
+  box-shadow: #dfd6c2 3px 3px 3px 0px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  font-weight: 500;
+}
+input.userRolePermissionFormField2{
+  height: 20px;
+  outline: none;
+  margin-bottom: 7px;
+  margin-top: 10px;
+  padding: 13px 15px;
+  font-weight: 500;
+  width: 90%;
+  /*select box css*/
+  border-radius: 25px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  background-color: white;
+}
+.red {
+  color: #ff0000 !important;
+}
+.labelInput{
+  font-size: 20px ;
+  color: black;
+}
+.DatePicker {
+  border-radius: 5px;
+  box-shadow: #dfd6c2 3px 3px 3px 0px;
+  background: #fff;
+  height: 48px;
+  width: 90% !important;
+  margin: 0% !important;
+}
+.dateText{
+  padding: 10px;
+  margin-top: 4px;
+}
+
+.button-mid
+{
+  display: block !important;
+  text-align: center;
+  margin: auto;
+}
+.button_group {
+  display: block;
+  padding-top: 0.1em;
+  margin-bottom: 0.3em;
+  text-align: center;
+  background-color: transparent !important;
+}
+.cancel {
+  background: #087d74;
+  color: #ffffff;
+  margin-right: 30px;
+  padding: auto !important;
+  border: solid 2px #ffffff;
+  border-radius: 30px;
+  width: 143px;
+  font-size: 20px;
+  box-shadow: 0px 8px 15px #888888;
+  line-height: 2px;
+  
+}
+.delete {
+  background: #ff0000;
+  color: #ffffff;
+  padding: 10px 30px -8px 30px;
+  border: solid 2px #ffffff;
+  border-radius: 30px;
+  width: 143px;
+  font-size: 20px;
+  box-shadow: 0px 8px 15px #888888;
+  text-align: center !important;
+  line-height: 2px;
+}
+.mat-toolbar {
+  display: block !important;
+  text-align: center !important;
+}
+.mobileNo input {
+  background-image: url(/assets/img/images/flag.svg);
+  background-repeat: no-repeat;
+  background-position: left 5% center;
+  background-size: 35px;
+  padding-left: 60px !important;
+}
+
+#bulk-upload1[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+.bulk-upload {
+    background-image: linear-gradient(45deg,#025599,#025599);
+    color: #FFFFFF;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 40px;
+}
+.btn-primary {
+    border: #f0f0f0;
+    background-color: #025599;
+    color: #FFFFFF;
+    border-radius: 10px;
+    width: 172px !important;
+    height: 40px;
+    font-size: 15px;
+    opacity: 0.6;
+}
+.btn-primary:focus{
+  box-shadow: none;
+}
+
+.arrowIcon{
+    width: 20px; 
+    height: 20px;
+    margin-bottom: 2px;
+}
+.main-content {
+  height: calc(100vh - 120px);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.pe-5{
+  padding-right: 7rem !important;
+}
+
+// datepicker css
+.datePicker mat-icon
+{
+  vertical-align: top !important;
+}
+.datepicker{
+  height: 50px;
+  outline: none;
+  margin-bottom: 7px;
+  margin-top: 10px;
+  padding: 13px 15px;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 25px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  background-color: white;
+}
+
+.datepicker .bs-datepicker-head {
+  background-color: #ffb81c !important;
+}
+
+.theme-green .bs-datepicker-head {
+  background-color:  #ffb81c !important;
+}
+.actionImage{
+  width: 30px;
+  cursor: pointer;
+}
+.CustomFormLabel {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  }

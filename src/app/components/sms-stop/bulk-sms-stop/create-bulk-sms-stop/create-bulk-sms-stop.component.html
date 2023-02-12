@@ -1,0 +1,252 @@
+<div class="main-content">
+
+  <div class="row mx-2 my-4">
+    <h4>Create Bulk SMS Stop Detail</h4>
+    <!-- <div>
+        <label for="">Select SMS Service Type </label>
+    </div> -->
+    <!-- <div>
+        <mat-select class="select"  panelClass="myPanelClass1" disableOptionCentering placeholder="Select">
+            <mat-option value=1 >OTP</mat-option>
+            <mat-option value=2 >OTP Registration</mat-option>
+            <mat-option value=3 >OTP Re-verify</mat-option>
+            <mat-option value=4 >Pay To</mat-option>
+            <mat-option value=5 >Top Up Recharge</mat-option>
+            <mat-option value=6 >OTP SIM Changing</mat-option>
+            <mat-option value=7 >OTP Device Changing</mat-option>
+            <mat-option value=8 >New SMS Template</mat-option>
+            <mat-option value=9 >DTH</mat-option>
+            <mat-option value=10 >Gift Card</mat-option>
+        </mat-select>
+    </div> -->
+  </div>
+
+  <div class="row mx-1 my-4">
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select Stop Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+          
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Source</mat-option>
+          <mat-option value=2>Destination</mat-option>
+         
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select Account Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Personal</mat-option>
+          <mat-option value=2>Merchant</mat-option>
+          <mat-option value=3>Advance Merchant</mat-option>
+          <mat-option value=4>Safety Cashier</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="">Select SMS Service Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" disableOptionCentering
+          panelClass="myPanelClass" multiple placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+         
+          <mat-option value=4>Pay To</mat-option>
+          <mat-option value=5>Top Up Recharge</mat-option>
+          <mat-option value=1>OTP SIM Changing</mat-option>
+          <mat-option value=2>OTP Device Changing</mat-option>
+          <mat-option value=3>DTH</mat-option>
+          <mat-option value=4>Gift Card</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mx-1 my-4">
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select Operator Name</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" panelClass="myPanelClass1"
+          disableOptionCentering placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>MPT</mat-option>
+          <mat-option value=2>Telenor</mat-option>
+          <mat-option value=3>Ooredoo</mat-option>
+          <mat-option value=4>Mytel</mat-option>
+          <mat-option value=5>MEC Tel</mat-option>
+          
+
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select OS Type</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+           
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Android</mat-option>
+          <mat-option value=2>IOS</mat-option>
+         
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="">Select OS Version</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" disableOptionCentering
+          panelClass="myPanelClass" multiple placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+         
+          <mat-option value=1>IOS 7</mat-option>
+          <mat-option value=2>IOS 8</mat-option>
+          <mat-option value=3>IOS 9</mat-option>
+          <mat-option value=4>Android 10</mat-option>
+          <mat-option value=5>Android 11</mat-option>
+          <mat-option value=6>Android 12</mat-option>
+
+        </mat-select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mx-1 my-4">
+    <div class="col-md-4 ">
+      <div>
+        <label for="">Select OK$ App Version</label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" disableOptionCentering
+        panelClass="myPanelClass" multiple placeholder="Select">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+          fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+            <mat-label class="label">Filter:</mat-label>
+            <mat-form-field appearance="standard">
+              <input matInput class="select_search_box" placeholder="Enter Keywords">
+            </mat-form-field>
+          </div>
+          <button fxLayout="row" mat-button class="check_uncheck_btn">
+            <mat-icon class="secondary-text s-5">
+              check</mat-icon>Check All
+          </button>
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+            <mat-icon class="secondary-text s-5">
+              clear</mat-icon>Uncheck All
+          </button>
+        </div>
+       
+        <mat-option value=1>V1.26.3</mat-option>
+        <mat-option value=2>V1.26.3</mat-option>
+        <mat-option value=3>V1.26.3</mat-option>
+   
+
+      </mat-select>
+      </div>
+    </div>
+   
+
+  </div>
+</div>
+
+<mat-toolbar>
+  <div class="button_group">
+    <button class="cancel" mat-button>CANCEL</button>
+    <button class="create" mat-button>SAVE</button>
+  </div>
+</mat-toolbar>

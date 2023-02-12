@@ -1,0 +1,41 @@
+<div class="main-content">
+
+    <div class="row mx-2 my-3">
+        <h4>Create Email Configuration Detail</h4>
+      </div>
+    
+      <div class="row  mx-1">
+       
+        <div class="col-md-4">
+          <br>
+          <div class="mb-2">
+          <mat-form-field floatLabel="always">
+              <mat-label class="labelInput">Source E-mail Address</mat-label>
+              <input matInput class="userRolePermissionFormField2" placeholder="Enter Source E-mail Address">
+              <mat-icon matSuffix></mat-icon>
+          </mat-form-field>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <div class="mb-2">
+          <mat-form-field floatLabel="always">
+              <mat-label class="labelInput">Password</mat-label>
+              <input matInput class="userRolePermissionFormField2" placeholder="Enter Signature" [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix class="eyeIcon" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+          </div>
+        
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+
+</div>
+
+<mat-toolbar>
+    <div class="button_group">
+      <button class="cancel" mat-button [routerLink]="''">CANCEL</button>
+      <button class="create" mat-button [routerLink]="''">SAVE</button>
+    </div>
+  </mat-toolbar>

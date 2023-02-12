@@ -1,0 +1,212 @@
+<div class="main-content" >
+
+  
+
+    <div class="d-flex justify-content-between  pb-2 ">
+      <h4 class="font-w600 title m-2 mr-auto ">Bulk E-mail Detail</h4>
+      
+    </div>
+      <div class="row  mx-1 mb-2">
+        <div class="col-md-4">
+          <br>
+          <div>
+              <label for="">Upload E-mail Address</label>
+          </div>
+          <div class="mb-2">
+    
+    
+              <input value="testing.xlsx" id="file" class="upload-file" disabled  placeholder="Upload Profile Image">
+    
+              <mat-icon matSuffix class="upload" style="margin-left: -40px;">folder_open</mat-icon><br>
+             
+    
+    
+          </div>
+        </div>
+      </div>
+      <div class="row mx-1 mb-2" >
+          <div class="col-md-4 ">
+              <div class="my-3">
+                  <label for="">Source E-mail Type </label>
+              </div>
+              <div>
+                <mat-select class="select" [(value)]="selectedEmailType" disabled  disableOptionCentering panelClass="normalSelect" placeholder="Select" >
+                  <mat-option value="1" >Custom E-mail</mat-option>
+                  <mat-option value="2" >Default E-mail</mat-option>
+              </mat-select>
+    
+              </div>
+          </div>
+          <div class="col-md-8"></div>  
+      </div>
+      
+      <div class="row mx-1 my-4"  >
+          <div class="col-md-4 ">
+              <div class="my-3">
+                  <label for="">Source E-mail Address </label>
+              </div>
+              <div>
+                <mat-select class="select" [(value)]="emailAddress" disableOptionCentering  disabled panelClass="normalSelect" placeholder="Select">
+                  <mat-option value=1 >cgm@gmail.com</mat-option>
+                  <mat-option value=2 >cgm@yahoo.com</mat-option>
+              </mat-select>
+    
+              </div>
+          </div>
+          <div class="col-md-8"></div>  
+      </div>
+  
+      <div class="row  mx-1 my-4">
+          <div class="col-md-4">
+              <br>
+              <div class="mb-2">
+              <mat-form-field floatLabel="always">
+                  <mat-label class="labelInput">Subject </mat-label>
+                  <input matInput class="userRolePermissionFormField2" disabled value="Promotion"  placeholder="Enter Subject">
+                  <mat-icon matSuffix></mat-icon>
+              </mat-form-field>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <br>
+              <div class="mb-2">
+              <mat-form-field floatLabel="always">
+                  <mat-label class="labelInput">Signature </mat-label>
+                  <input matInput class="userRolePermissionFormField2" disabled value="Thank You!     CGM Team" placeholder="Enter Signature">
+                  <mat-icon matSuffix></mat-icon>
+              </mat-form-field>
+              </div>
+          
+          </div>
+          <div class="col-md-4"></div>
+      </div>
+  
+      <div class="row mx-1 my-4">
+          <div class="col-md-6">
+            <div class="my-3">
+                <label for="">Message Body in English</label>
+            </div>
+            <mat-form-field appearance="fill" class="text-area">
+              <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              matInput #message1 value="Hi Mingalar Pr" disabled maxlength="256" ></textarea>
+          
+              <mat-hint align="end">{{message1.value.length}} / 256</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <div class="my-3">
+                <label for="">Message Body in Myanmar</label>
+            </div>
+            <mat-form-field appearance="fill" class="text-area">
+              <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              matInput #message2 value="ဟိုင်း မင်္ဂလာပါ" disabled maxlength="256" ></textarea>
+          
+              <mat-hint align="end">{{message2.value.length}} / 256</mat-hint>
+            </mat-form-field>
+          </div>    
+        </div>
+  
+        <div class="row mx-1 my-2">
+          <div class="col-md-8">
+            <div class="userRolePermissionFormField2 uploadFile my-2" > testing.xlsx
+               <i class="material-icons float-right clearIcon">clear</i>
+            </div>
+            <div class="userRolePermissionFormField2 uploadFile my-2" > promotion.xlsx
+              <i class="material-icons float-right clearIcon">clear</i>
+           </div>
+          </div>
+          <div class="col-md-4">
+            <div class="col-12 d-flex justify-content-end align-items-center">
+              <a class="text-decoration-none ">
+                <button class="btn btn-primary mx-3" disabled style="padding: 0.6rem 0;width: 150px;" type="button">       
+                      <img src="../../../../../assets/img/Icon/Attach Svg.svg" class="arrowIcon mx-2" alt="">
+                      <span class="ml-2 text-white">Attach Files</span>  
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mx-1 my-2">
+          <div class="col-md-12">
+              <div class="my-3">
+                  <label for="">Remarks</label>
+              </div>
+              <mat-form-field appearance="fill" class="text-area">
+                  <textarea matInput
+                              cdkTextareaAutosize
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="1"
+                              cdkAutosizeMaxRows="5" disabled>Promotion</textarea>
+              </mat-form-field>
+          </div>
+        </div>
+        <div class="row my-5 mx-3">
+          <mat-radio-group aria-labelledby="example-radio-group-label" disabled class="example-radio-group mx-1"
+        [(ngModel)]="radioBtn">
+        <mat-radio-button class="example-radio-button pe-5 " *ngFor="let radio of radios" [value]="radio">
+          {{radio}}
+        </mat-radio-button>
+      </mat-radio-group> 
+          
+          <div class="col-md-6"></div>
+      </div>
+      <div class="row mx-1 my-2" >
+          <div class="col-md-5 ">
+            <div class="my-3">
+              <label for="">Select Frequency <span>*</span> </label>
+            </div>
+            <div>
+              <mat-select class="sel1" [(value)]="selected" disabled disableOptionCentering panelClass="normalSelect" placeholder="Select">
+                <mat-option value=1>Today</mat-option>
+                <mat-option value=2>Daily</mat-option>
+                <mat-option value=3>Weekly</mat-option>
+                <mat-option value=4>Monthly</mat-option>
+                <mat-option value=5>Quaterly</mat-option>
+                <mat-option value=6>Half-Yearly</mat-option>
+                <mat-option value=7>Yearly</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-md-5 my-4" style="margin-top: 35px !important;">
+            <mat-form-field floatLabel="always">
+              <mat-label class="labelInput">Select Period <span class="red">*</span></mat-label>
+              <input matInput class="userRolePermissionFormField2" disabled value="Tue,10-May-2022 , 16:28 - Mon,06-Jun-2022 , 16:28" placeholder="Enter Value">
+            </mat-form-field>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        
+        <div class="row mx-1 my-2">
+          <div class="col-md-5">
+            <br>
+            <div class="my-3">
+              <mat-form-field floatLabel="always">
+                <mat-label class="labelInput">Frequency Count <span class="red">*</span></mat-label>
+                <input matInput class="userRolePermissionFormField2" value="5" disabled placeholder="Enter Value">
+                <mat-icon matSuffix></mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-5 ngx-timepicker-field-example">
+            <span class="CustomFormLabel">
+              Select Period Time (24 hours) <span class="red">*</span>
+            </span>
+            <div class="d-flex">
+              <ngx-timepicker-field class="" [controlOnly]="true" [disabled]="true" [format]="24" [defaultTime]="'13:11'">
+              </ngx-timepicker-field>
+              <ngx-timepicker-field class="" [controlOnly]="true" [disabled]="true" [format]="24" [defaultTime]="'19:41'">
+              </ngx-timepicker-field>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+  
+  </div>
+  
+  <mat-toolbar>
+      <div class="button_group">
+        <button class="cancel" mat-button (click)="onDismiss()">Back</button>
+      </div>
+  </mat-toolbar>
+  

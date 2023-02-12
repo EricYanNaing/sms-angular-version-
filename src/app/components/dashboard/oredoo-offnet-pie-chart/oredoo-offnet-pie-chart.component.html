@@ -1,0 +1,141 @@
+<div class="main-content">
+  <div class="row mx-2 my-4 containerHeight" >
+    <div class="col-md-6 col-12  ">
+
+        <div class="col-md-12 col-12 card">
+
+            <div class="d-flex justify-content-between  pb-5 ">
+                <h5 class="font-w600 title m-2 mr-auto ">Ooredoo</h5>
+                <div class="d-flex dateW">
+                  <img  class="crud-btns" matTooltip="Filter" (click)="operatorFilter()"
+                  aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" >
+                  
+                  <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+                    <select matNativeControl required class=" mat-select-filter">
+                        <option value="option1">Monthly Wise Amount</option>
+                        <option value="2">Daily Wise Amount</option>
+                        <option value="3">Weekly Wise Amount</option>
+                        <option value="4">Quarterly Wise Amount</option>
+                        <option value="5" >Half Yearly Wise Amount</option>
+                        <option value="6" >Yearly Wise Amount</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div #PieChart class="col-md-8 col-12 piechartSize" [routerLink]="'./on-net-and-off-net'">
+                <ngx-charts-pie-chart
+                [view]="[PieChart.offsetWidth,400]"
+                [scheme]="cgmOffnetColor"
+                [results]="cgmOffnet"
+                [gradient]="gradient"
+                [legend]="showLegend"
+                [legendPosition]="below" 
+                [legendTitle]="legendTitle"  
+                (select)="onSelect($event)">
+                </ngx-charts-pie-chart>
+            </div>
+              <div class="col-md-2"></div>
+            </div>
+
+           
+
+        </div>
+        <div class="my-2">
+            <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8 ">
+
+                <ng-container matColumnDef="blank">
+                  <th mat-header-cell *matHeaderCellDef>  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.blank}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="count1">
+                  <th mat-header-cell *matHeaderCellDef> Count </th>
+                  <td mat-cell *matCellDef="let element"> {{element.count1}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="amount1">
+                  <th mat-header-cell *matHeaderCellDef> Amount </th>
+                  <td mat-cell *matCellDef="let element"> {{element.amount1}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="totalAmt">
+                  <th mat-header-cell *matHeaderCellDef> 	Total On Net & Off Net Amount  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.totalAmt}} </td>
+                </ng-container>
+              
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+            </table>
+        </div>
+            
+    </div>
+    <div class="col-md-6 col-12 ">
+
+        <div class="col-md-12 col-12 card">
+
+            <div class="d-flex justify-content-between  pb-5 ">
+                <h5 class="font-w600 title m-2 mr-auto ">Off Net</h5>
+                <div class="d-flex dateW">
+                  <img  class="crud-btns" matTooltip="Filter" (click)="offnetFilter()"
+                  aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" >
+                  
+                  <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+                    <select matNativeControl required class=" mat-select-filter">
+                        <option value="option1">Monthly Wise Amount</option>
+                        <option value="2">Daily Wise Amount</option>
+                        <option value="3">Weekly Wise Amount</option>
+                        <option value="4">Quarterly Wise Amount</option>
+                        <option value="5" >Half Yearly Wise Amount</option>
+                        <option value="6" >Yearly Wise Amount</option>
+                    </select>
+                  </mat-form-field>
+
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div #PieChart2 class="col-md-8 col-12 piechartSize" [routerLink]="'./on-net-and-off-net'">
+                <ngx-charts-pie-chart
+                [view]="[PieChart.offsetWidth,400]"
+                [scheme]="colorScheme"
+                [results]="single"
+                [gradient]="gradient"
+                [legend]="showLegend"
+                [legend]="true"
+                [legendTitle]="legendTitle"
+                [legendPosition]="below"
+                (select)="onSelect($event)">
+                </ngx-charts-pie-chart>
+            </div>
+              <div class="col-md-2"></div>
+            </div>
+        </div>
+        <div class="my-2">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
+
+              <ng-container matColumnDef="operator">
+                <th mat-header-cell *matHeaderCellDef> Operator </th>
+                <td mat-cell *matCellDef="let element"> {{element.operator}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="count">
+                <th mat-header-cell *matHeaderCellDef> Count </th>
+                <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="amount">
+                <th mat-header-cell *matHeaderCellDef> Amount </th>
+                <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+              </ng-container>
+            
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+      </div>
+    </div>
+</div>
+</div>

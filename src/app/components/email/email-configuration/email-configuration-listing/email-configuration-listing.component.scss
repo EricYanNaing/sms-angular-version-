@@ -1,0 +1,47 @@
+.table-pagination table
+{
+  width: 100%;
+  white-space: nowrap;
+}
+.table-pagination tr
+{
+  border: 1px solid #d6c7ec;
+}
+.table-pagination table th {
+  background: #ffb81c;
+  font-size: 16px;
+  padding-right: 24px;
+  white-space: nowrap;
+  border-right: 1px solid #d6c7ec;
+  text-align: center;
+  font-weight: 700;
+  padding: 0px 25px;
+}
+.table-pagination table td{
+  text-align: left;
+  border-right: 1px solid #d6c7ec;
+  text-align: center;
+  font-weight: 600;
+  padding: 0px 25px;
+}
+.table-pagination{
+  height: calc(85vh - 120px);
+  overflow: auto;
+}
+
+.mat-paginator-companyName{
+  width: 100%;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row
+{
+  padding: 0px !important;
+}
+
+.actionImage{
+    width: 30px;
+    cursor: pointer;
+}
+.crud-btns{
+    width: 28px;
+  }

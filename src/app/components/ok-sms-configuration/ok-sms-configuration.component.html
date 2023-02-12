@@ -1,0 +1,321 @@
+<div class="main-content p-3">
+  <h4 class="p-2">OK$ SMS Configuration</h4>
+  <div class="row mx-1 my-4">
+    <div class="col-md-4 ">
+      <div class="my-3">
+        <label for="">Select SMS Service Type</label>
+      </div>
+      <div>
+        <mat-select class="select2" disableOptionCentering panelClass="normalSelect" placeholder="Select"
+          [(ngModel)]="sms_service_type">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard" style="padding-bottom: 0em !important; ">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <!-- <button fxLayout="row" mat-button class="check_uncheck_btn" >
+                      <mat-icon class="secondary-text s-5">
+                        check</mat-icon>Check All
+                    </button>
+                    <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+                      <mat-icon class="secondary-text s-5">
+                        clear</mat-icon>Uncheck All
+                    </button> -->
+          </div>
+          <mat-option value=1>OTP</mat-option>
+          <mat-option value=2>OTP Registration</mat-option>
+          <mat-option value=3>OTP Re-verify</mat-option>
+          <mat-option value=4>Pay To</mat-option>
+          <mat-option value=5>Top Up Recharge</mat-option>
+          <mat-option value=6>OTP SIM Changing</mat-option>
+          <mat-option value=7>OTP Device Changing</mat-option>
+          <mat-option value=8>New SMS Template</mat-option>
+          <mat-option value=9>DTH</mat-option>
+          <mat-option value=10>Gift Card</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-8"></div>
+
+  </div>
+
+  <div class="row mx-1 my-4">
+
+    <div class="col-12 col-md-4 ">
+      <div class="my-3">
+        <label for="">Select OS Type </label>
+      </div>
+      <div>
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Andriod User</mat-option>
+          <mat-option value=2>IOS User</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="my-3">
+        <label for="">Select Last Login Period</label>
+      </div>
+      <div>
+
+        <input type="text" placeholder="From Date - To Date" class="form-control datepicker" bsDaterangepicker
+          [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true ,showWeekNumbers: false}"
+          [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>
+      </div>
+
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="my-3">
+        <label for="">Select OK$ Version </label>
+      </div>
+      <div>
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" disableOptionCentering
+          panelClass="myPanelClass" multiple placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <!-- <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+                    <mat-label class="label">Filter:</mat-label>
+                    <mat-form-field appearance="standard" >
+                      <input matInput class="select_search_box"  placeholder="Enter Keywords">
+                    </mat-form-field>
+                  </div> -->
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>V.1.2.61</mat-option>
+          <mat-option value=2>V.1.2.60</mat-option>
+          <mat-option value=2>V.1.2.59</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div *ngIf="sms_service_type === '8'">
+    <div class="row mx-1 my-4">
+      <div class="col-12 col-md-4">
+        <div class="my-3">
+          <label for="">SMS in English</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" matInput
+            #message maxlength="160"></textarea>
+
+          <mat-hint align="end">{{message.value.length}} / 160</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="my-3">
+          <label for="">SMS in Zawgyi</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" matInput
+            #message1 maxlength="160"></textarea>
+
+          <mat-hint align="end">{{message1.value.length}} / 160</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="my-3">
+          <label for="">SMS in Unicode</label>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" matInput
+            #message2 maxlength="160"></textarea>
+
+          <mat-hint align="end">{{message2.value.length}} / 160</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-4">
+      <div class="col-12 col-md-12">
+        <div class="my-3">
+          <label for="">Remarks</label>
+        </div>
+        <mat-form-field appearance="fill" class="text-area">
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="7">
+            </textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row my-5 mx-3">
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group mx-1"
+        [(ngModel)]="radioBtn">
+        <mat-radio-button class="example-radio-button pe-5 " *ngFor="let radio of radios" [value]="radio">
+          {{radio}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <div class="col-12 col-md-6"></div>
+    </div>
+
+    <div class="row mx-1 my-4" *ngIf="radioBtn==='Send Now'"></div>
+
+    <div class="row mx-1 my-2" *ngIf="radioBtn==='Schedule'">
+      <div class="col-12 col-md-4 ">
+        <div class="my-3">
+          <label for="">Select Frequency <span>*</span> </label>
+        </div>
+        <div>
+          <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select">
+            <mat-option value=1>Today</mat-option>
+            <mat-option value=2>Daily</mat-option>
+            <mat-option value=3>Weekly</mat-option>
+            <mat-option value=4>Monthly</mat-option>
+            <mat-option value=5>Quaterly</mat-option>
+            <mat-option value=6>Half-Yearly</mat-option>
+            <mat-option value=7>Yearly</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="my-3">
+          <label for="">Select Period Date <span class="red">*</span></label>
+        </div>
+        <input type="text" placeholder="From Date - To Date" class="form-control datepicker" bsDaterangepicker
+          [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+          [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>
+      </div>
+      <div class="col-12 col-md-4 ngx-timepicker-field-example">
+        <span class="CustomFormLabel">
+          Select Period Time (24 hours) <span class="red">*</span>
+        </span>
+        <div class="d-flex">
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 barRow" *ngIf="radioBtn==='Schedule'">
+      <div class="col-12 col-md-4">
+        <br>
+        <div class="my-3">
+          <mat-form-field floatLabel="always">
+            <mat-label class="labelInput">Frequency Count <span class="red">*</span></mat-label>
+            <input matInput class="userRolePermissionFormField2" placeholder="Enter Value">
+            <mat-icon matSuffix></mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 " *ngIf="radioBtn==='Custom'">
+      <div class="col-12 col-md-4 ">
+        <div class="my-3">
+          <label for="">Select Frequency <span>*</span> </label>
+        </div>
+        <div>
+          <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select">
+            <mat-option value=1>Today</mat-option>
+            <mat-option value=2>Daily</mat-option>
+            <mat-option value=3>Weekly</mat-option>
+            <mat-option value=4>Monthly</mat-option>
+            <mat-option value=5>Quaterly</mat-option>
+            <mat-option value=6>Half-Yearly</mat-option>
+            <mat-option value=7>Yearly</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="my-3">
+          <label for="">Select Period Date <span class="red">*</span></label>
+        </div>
+        <input type="text" placeholder="From Date - To Date" class="form-control datepicker" bsDaterangepicker
+          [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+          [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>
+      </div>
+      <div class="col-12 col-md-4 ngx-timepicker-field-example">
+        <span class="CustomFormLabel">
+          Select Period Time (24 hours) <span class="red">*</span>
+        </span>
+        <div class="d-flex">
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+          <ngx-timepicker-field class="" [controlOnly]="true" [format]="24" [defaultTime]="'23:11'">
+          </ngx-timepicker-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-1 my-2 barRow" *ngIf="radioBtn==='Custom'">
+      <div class="col-12 col-md-4">
+        <br>
+        <div class="my-3">
+          <mat-form-field floatLabel="always">
+            <mat-label class="labelInput">Number Of Message <span class="red">*</span></mat-label>
+            <input matInput class="userRolePermissionFormField2" placeholder="Enter Value">
+            <mat-icon matSuffix></mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<mat-toolbar>
+    <div class="button_group" *ngIf="sms_service_type === '1' || sms_service_type === '2'  || sms_service_type === '3'  || sms_service_type === '4'
+    || sms_service_type === '5' || sms_service_type === '6'  || sms_service_type === '7'  || sms_service_type === '9'  || sms_service_type === '10'">
+      <button class="cancel" [routerLink]="'../'">CANCEL</button>
+      <button class="save" [routerLink]="'../'"> SAVE</button>
+    </div>
+
+  <div class="button_group" *ngIf="radioBtn==='Send Now'">
+    <button class="cancel" [routerLink]="'../'">CANCEL</button>
+    <button class="send" [routerLink]="'../'"> SEND</button>
+  </div>
+
+  <div class="button_group" *ngIf="radioBtn==='Schedule'">
+    <button class="cancel" [routerLink]="'../'">CANCEL</button>
+    <button class="save" [routerLink]="'../'"> SAVE</button>
+  </div>
+
+    <div class="button_group" *ngIf="radioBtn==='Custom'">
+      <button class="cancel" [routerLink]="'../'">CANCEL</button>
+      <button class="save" [routerLink]="'../'"> SAVE</button>
+    </div>
+</mat-toolbar>
+

@@ -1,0 +1,91 @@
+.crud-btns{
+    width: 25px;
+  }
+  .DatePicker {
+    border-radius: 5px;
+    box-shadow: #dfd6c2 3px 3px 3px 0px;
+    background: #fff;
+    height: 55px;
+    width: 90% !important;
+    margin: 0% !important;
+  }
+  .dateText{
+    padding: 10px;
+    margin-top: 4px;
+  }
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  .label{
+    padding-bottom: 4px !important;
+  }
+
+  .main-content
+  {
+    height: 91vh;
+    overflow: auto;
+    overflow-x: hidden;
+  }
+.tableConatiner table{
+  width: 97%;
+  margin: 0px 25px 0px 25px;
+}
+.tableConatiner table th {
+  font-size: 16px;
+  padding-right: 24px;
+  white-space: nowrap;
+  border-right: 1px solid #ebebeb;
+  text-align: center;
+  font-weight: 700;
+  padding: 0px 25px;
+}
+
+.tableConatiner td{
+  border: 1px solid #ebebeb;
+}
+
+.tableConatiner td{
+    text-align: left;
+    border-right: 1px solid #ebebeb;
+    text-align: center;
+    font-weight: 600;
+    padding: 0px 25px;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1560px)  {
+  .tableConatiner{
+    overflow: scroll;
+    margin: 0px 25px 0px 25px;
+  }
+  .tableConatiner table{
+    margin: 0px;
+  }
+}
+
+
+// datepicker css
+.datePicker mat-icon
+{
+  vertical-align: top !important;
+}
+.datepicker{
+  height: 50px;
+  outline: none;
+  margin-bottom: 7px;
+  margin-top: 10px;
+  padding: 13px 15px;
+  font-weight: 500;
+  width: 90%;
+  border-radius: 25px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  background-color: white;
+}
+
+.datepicker .bs-datepicker-head {
+  background-color: #ffb81c !important;
+}
+
+.theme-green .bs-datepicker-head {
+  background-color:  #ffb81c !important;
+}

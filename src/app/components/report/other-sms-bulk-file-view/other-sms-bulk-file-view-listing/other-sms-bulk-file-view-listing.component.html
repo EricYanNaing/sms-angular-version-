@@ -1,0 +1,208 @@
+<div class="p-3">
+
+  <div class="d-flex justify-content-between  pb-2">
+    <h4>Search Other SMS Bulk File View</h4>
+    <div class="d-flex justify-content-between align-items-center ">
+      <div class="search-form">
+        <input type="text" name="search" placeholder="Search" class="search-bar" autocomplete="off">
+     </div>
+    </div>
+  </div>
+  <div class="row mx-1">
+    <div class="col-md-4">
+      <br>
+      <div class="mb-2">
+        <mat-form-field floatLabel="always">
+          <mat-label class="label-input">File Name</mat-label>
+          <input matInput class="userRolePermissionFormField2" placeholder="Enter File Name">
+          <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+      <div>
+        <mat-label for="">Transaction Type</mat-label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select" >
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <!-- <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div> -->
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Sugar Mill Factory</mat-option>
+          <mat-option value=2>Other</mat-option>
+
+        </mat-select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <mat-label for="">Status</mat-label>
+      </div>
+      <div class="m-3">
+        <mat-select class="select2 select_remove_cashback_filter mat-select-filter" disableOptionCentering
+          panelClass="myPanelClass" multiple placeholder="Select">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+            fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="center center" class="filter_text filterRow">
+              <mat-label class="label">Filter:</mat-label>
+              <mat-form-field appearance="standard">
+                <input matInput class="select_search_box" placeholder="Enter Keywords">
+              </mat-form-field>
+            </div>
+            <button fxLayout="row" mat-button class="check_uncheck_btn">
+              <mat-icon class="secondary-text s-5">
+                check</mat-icon>Check All
+            </button>
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+              <mat-icon class="secondary-text s-5">
+                clear</mat-icon>Uncheck All
+            </button>
+          </div>
+          <mat-option value=1>Completed</mat-option>
+          <mat-option value=2>Error</mat-option>
+          <mat-option value=3>Pre Process</mat-option>
+          <mat-option value=4>Processed</mat-option>
+
+
+        </mat-select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row  mx-2">
+
+    <div class="col-md-4">
+      <br>
+      <div class="mb-2">
+        <mat-form-field floatLabel="always">
+          <mat-label class="label-input">File Reference No</mat-label>
+          <input matInput class="userRolePermissionFormField2" placeholder="Enter  File Reference No">
+          <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-12 col-md-4 form-group ">
+      <div>
+        <label for="">Select Period Date</label>
+      </div>
+
+      <input type="text" placeholder="From Date - To Date" class="form-control datepicker" bsDaterangepicker
+        [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+        [maxDate]="maxDate">
+        <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>  
+    </div>
+
+   
+
+  </div>
+
+  <mat-toolbar>
+    
+    <!-- <div class="button_group">
+      <button class="search" mat-button *ngIf="!ContentTable" (click)="ContentTable = true">Search</button>
+    </div>
+    
+    <div class="button_group">
+      <button class="search" mat-button *ngIf="ContentTable" (click)="ContentTable = false">Search</button>
+    </div> -->
+
+    <div class="button_group">
+      <button class="clear" mat-button>Clear</button>
+      <button class="search" mat-button (click)="toggleShow()">Search</button>
+    </div>
+
+  </mat-toolbar>
+
+    <!-- table -->
+    <div class="d-flex justify-content-end"  *ngIf="isShown">
+      <img class="crud-btns" matTooltip="Excel Download"
+        aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/excel.svg" alt="">
+
+    </div>
+    <div class="secondary-table-pagination"  *ngIf="isShown">
+      
+      <table mat-table [dataSource]="dataSource">
+     
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef>File Name</th>
+          <td mat-cell *matCellDef="let element" class="fileName">{{element.fileName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fileReNo">
+          <th mat-header-cell *matHeaderCellDef>File Reference Number</th>
+          <td mat-cell *matCellDef="let element" class="fileReNo"> {{element.fileReNo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transaction">
+          <th mat-header-cell *matHeaderCellDef>Transaction Type</th>
+          <td mat-cell *matCellDef="let element"> {{element.transaction}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="userType">
+          <th mat-header-cell *matHeaderCellDef>User Type</th>
+          <td mat-cell *matCellDef="let element"> {{element.userType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobileCount">
+          <th mat-header-cell *matHeaderCellDef>Mobile Number Count</th>
+          <td mat-cell *matCellDef="let element"> {{element.mobileCount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fromtoDate">
+          <th mat-header-cell *matHeaderCellDef>From Date & Time</th>
+          <td mat-cell *matCellDef="let element"> {{element.fromtoDate}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="fromtoTime">
+          <th mat-header-cell *matHeaderCellDef>To Date & Time</th>
+          <td mat-cell *matCellDef="let element"> {{element.fromtoTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <a routerLink="../other-sms-bulk-file-view-detail">
+              <img class="actionImage" [src]="element.action" />
+            </a>
+       
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns,sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </div>
+
+    <mat-toolbar  *ngIf="isShown">
+      <mat-paginator class="mat-paginator-user-role-permission" [pageSizeOptions]="[10,20, 25, 50, 100]"
+        showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </mat-toolbar>
+
+</div>
+
+

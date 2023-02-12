@@ -1,0 +1,90 @@
+
+   <div class="modal-header">
+    <h4 class="">Filter</h4>
+    <i class="fa fa-close close" aria-hidden="true"></i>
+    <img src="assets/img/Icon/x.svg" alt="" class="crud-btns close" (click)="onDismiss()">
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <div class="content_outer">
+        <div class="row my-1">
+            <div class="col-xs-12 col-12 col-md-6 ">
+                <div class="my-3">
+                    <label for="">Select Source E-mail Type </label>
+                </div>
+                <div>
+                    <mat-select class="sel1" disableOptionCentering panelClass="normalSelect" placeholder="Select">
+                        <mat-option value=1 >Custom E-mail</mat-option>
+                        <mat-option value=2 >Default E-mail</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-12 col-md-6 ">
+                <div class="my-3">
+                  <label for="">Select Activated Period</label>
+              </div>
+                <div>
+                
+                <input type="text" placeholder="From Date - To Date" class="form-control datepicker" bsDaterangepicker
+                  [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+                  [maxDate]="maxDate">
+                  <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>  
+                </div>
+              </div>
+        </div>
+
+        <div class="row">    
+            <div class="col-xs-12 col-12 col-md-6 ">
+                <br>
+                <div class="mb-2">
+                <mat-form-field floatLabel="always">
+                    <mat-label class="labelInput">Source Email Address</mat-label>
+                    <input matInput class="userRolePermissionFormField2" placeholder="Enter Source Email Address">
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+                </div>
+            </div>
+            <div class="col-xs-12 col-12 col-md-6 ">
+                <br>
+                <div class="mb-2">
+                <mat-form-field floatLabel="always" >
+                    <mat-label class="labelInput">Destination E-mail Address</mat-label>
+                    <input matInput class="userRolePermissionFormField2" placeholder="Enter Destination E-mail Address">
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">    
+            <div class="col-xs-12 col-12 col-md-6 ">
+                <br>
+                <div class="mb-2">
+                <mat-form-field floatLabel="always" >
+                    <mat-label class="labelInput">File Reference Number</mat-label>
+                    <input matInput class="userRolePermissionFormField2" placeholder="Enter File Reference Number">
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+                </div>
+            </div>
+            <div class="col-xs-12 col-12 col-md-6 ">
+                <br>
+                <div class="mb-2">
+                <mat-form-field floatLabel="always" >
+                    <mat-label class="labelInput">File Name </mat-label>
+                    <input matInput class="userRolePermissionFormField2" placeholder="Enter File Name">
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="button_group  text-center">
+            <button class="reset">RESET</button>
+            <button class="apply">APPLY</button>
+        </div>
+    
+    </div>
+  </mat-dialog-content>
+
+

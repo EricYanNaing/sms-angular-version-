@@ -1,0 +1,173 @@
+<div class="main-content">
+    <div class="container-fluid container-height">
+
+        <div class="row mx-2 my-4">
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    
+                    <div class="d-flex justify-content-between  pb-5 ">
+                        <h5 class="font-w600 title m-2 mr-auto ">On Net</h5>
+                        <div class="d-flex dateW">
+                          <img  class="crud-btns" matTooltip="Filter" (click)="onnetFilter()"
+                          aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" >
+                          <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+                            <select matNativeControl required class=" mat-select-filter">
+                                <option value="option1">Monthly Wise Amount</option>
+                                <option value="2">Daily Wise Amount</option>
+                                <option value="3">Weekly Wise Amount</option>
+                                <option value="4">Quarterly Wise Amount</option>
+                                <option value="5" >Half Yearly Wise Amount</option>
+                                <option value="6" >Yearly Wise Amount</option>
+                            </select>
+                          </mat-form-field>
+                        </div>
+                    </div>
+                        <div #PieChart class="col-md-12 col-12 piechartSize" [routerLink]="'./on-net-and-off-net'">
+                            <ngx-charts-pie-chart
+                            [view]="[PieChart.offsetWidth, 400]"
+                            [scheme]="colorScheme"
+                            [results]="single"
+                            [gradient]="gradient" 
+                            [legend]="showLegend"
+                            [legendPosition]="below"
+                            [legendTitle]="legendTitle" 
+                            (select)="onSelect($event)">
+                            </ngx-charts-pie-chart>
+                        </div>
+    
+                </div>
+                    
+            </div>
+            <div class="col-md-6 col-12 ">
+    
+                <div class="card ">
+    
+                    <div class="d-flex justify-content-between  pb-5 ">
+                        <h5 class="font-w600 title m-2 mr-auto ">Off Net</h5>
+                        <div class="d-flex dateW">
+                          <img  class="crud-btns" matTooltip="Filter" (click)="offnetFilter()"
+                          aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" >
+                          <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+                            <select matNativeControl required class=" mat-select-filter">
+                                <option value="option1">Monthly Wise Amount</option>
+                                <option value="2">Daily Wise Amount</option>
+                                <option value="3">Weekly Wise Amount</option>
+                                <option value="4">Quarterly Wise Amount</option>
+                                <option value="5" >Half Yearly Wise Amount</option>
+                                <option value="6" >Yearly Wise Amount</option>
+                            </select>
+                          </mat-form-field>
+                        </div>
+                    </div>
+                    <div #PieChart2 class="col-md-12 piechartSize" [routerLink]="'./on-net-and-off-net'">
+                        <ngx-charts-pie-chart
+                        [view]="[PieChart2.offsetWidth, 400]"
+                        [scheme]="colorScheme"
+                        [results]="single"
+                        [gradient]="gradient"
+                        [legend]="showLegend"
+                        [legendPosition]="below"
+                        [legendTitle]="legendTitle" 
+                        (select)="onSelect($event)">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="row mx-2  my-4">
+            <div class="col-md-6 col-12 ">
+                <div class="card">
+    
+                    <div class="d-flex justify-content-between  pb-5 ">
+                        <h5 class="font-w600 title m-2 mr-auto ">On Net & Off-Net Comparisson Chart</h5>
+                        <div class="d-flex dateW">
+                          <img  class="crud-btns" matTooltip="Filter" (click)="onnetOffnetComparisonFilter()"
+                          aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" >
+                          <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+                            <select matNativeControl required class=" mat-select-filter">
+                                <option value="option1">Monthly Wise Amount</option>
+                                <option value="2">Daily Wise Amount</option>
+                                <option value="3">Weekly Wise Amount</option>
+                                <option value="4">Quarterly Wise Amount</option>
+                                <option value="5" >Half Yearly Wise Amount</option>
+                                <option value="6" >Yearly Wise Amount</option>
+                            </select>
+                          </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div #ConatinerRef style="cursor: pointer;" [routerLink]="'./on-net-off-net-comparison'">
+                            <ngx-charts-bar-vertical-2d
+                            [view]="[ConatinerRef.offsetWidth,400]"
+                            [scheme]="colorScheme3"
+                            [results]="multi"
+                            [gradient]="gradient"
+                            [xAxis]="showXAxis"
+                            [yAxis]="showYAxis"
+                            [legend]="showLegend"
+                            [legendPosition]="below"
+                            [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel"
+                            [yAxisLabel]="yAxisLabel"
+                            [legendTitle]="legendTitle" 
+                            [xAxisTickFormatting]="xAxisTickFormatting"
+                            (select)="onSelect($event)">
+                            </ngx-charts-bar-vertical-2d>
+                            <!-- [xAxisLabel]="xAxisLabel" -->
+                        </div>
+                    </div>
+    
+                
+                </div>
+    
+            </div>
+    
+            <div class="col-md-6 col-12">
+                <div class="card">
+    
+                    <div class="d-flex justify-content-between  pb-5 ">
+                        <h5 class="font-w600 title m-2 mr-auto ">Share Cost Amount Company Base</h5>
+                        <div class="d-flex dateW">
+                          <img  class="crud-btns" matTooltip="Filter" (click)="shareCostAmountCompanyBaseFilter()"
+                          aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" >
+                          <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+                            <select matNativeControl required class=" mat-select-filter">
+                                <option value="option1">Monthly Wise Amount</option>
+                                <option value="2">Daily Wise Amount</option>
+                                <option value="3">Weekly Wise Amount</option>
+                                <option value="4">Quarterly Wise Amount</option>
+                                <option value="5" >Half Yearly Wise Amount</option>
+                                <option value="6" >Yearly Wise Amount</option>
+                            </select>
+                          </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row  ">
+                        <div #ConatinerRef2 class="barChartContainer "  style="cursor: pointer;" [routerLink]="'./share-cost-amount-company-base'">
+                            <ngx-charts-bar-vertical
+                            [view]="[ConatinerRef2.offsetWidth, 432]"
+                            [scheme]="colorScheme2"
+                            [results]="shareCost"
+                            [gradient]="gradient"
+                            [xAxis]="showXAxis"
+                            [yAxis]="showYAxis"
+                            [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel"
+                            [yAxisLabel]="yAxisLabel"
+                            [legendTitle]="legendTitle" 
+                            (select)="onSelect($event)">
+                            </ngx-charts-bar-vertical>
+                            <!-- [xAxisLabel]="xAxisLabel" -->
+                        </div>
+                    </div>
+    
+                
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
+</div>

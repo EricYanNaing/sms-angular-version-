@@ -1,0 +1,56 @@
+
+.confirm_btn{
+    background: #fff;
+    color: white;
+    height: 45px;
+    width: 120px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 25px;
+    
+}
+// .cancel{
+//     height: 45px;
+//     width: 120px;
+//     border-radius: 4px;
+//     background: $alert-dismiss-btn-clr;
+//     color: white;
+//     font-size: 16px;
+// }
+.confirm_dialog{
+   
+    overflow: auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px !important;
+    border: 5px solid #e0b54f !important;
+   
+    h3{
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 1.8;
+    }
+}
+
+
+.yes {
+    background: #946317  !important;
+    color: #ffffff;
+    border-radius: 30px;
+    width: 143px;
+    font-size: 20px;
+    box-shadow: 0px 8px 15px #888888;
+    margin: 20px;
+    border:2px solid #fff;
+  }
+  
+  .no {
+    background: #a30303 !important;
+    color: #ffffff;
+    margin-right: 30px;
+    border-radius: 30px;
+    width: 143px;
+    font-size: 20px;
+    box-shadow: 0px 8px 15px #888888;
+    border:2px solid #fff;
+  }

@@ -1,0 +1,311 @@
+.main-content {
+    height: calc(100vh - 120px);
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+.select{
+    height: 50px;
+    outline: none;
+    
+    margin-bottom: 10px;
+    width: 30% !important;
+    padding: 15px 15px;
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: white;
+    &:focus{
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    }
+  }
+
+  .select2{
+    height: 50px;
+    outline: none;
+    margin-bottom: 10px;
+    width: 92% !important;
+    padding: 15px 15px;
+
+    /*select box css*/
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: white;
+   
+    &:focus{
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    }
+  }
+::placeholder{
+    color: rgba(80, 75, 75, 0.87);
+    font-size: 14px;
+}
+::-moz-placeholder{
+    color: rgba(80, 75, 75, 0.87);
+    font-size: 14px;
+}
+::-webkit-input-placeholder{
+    color: rgba(80, 75, 75, 0.87);
+    font-size: 14px;
+}
+.filter_select_header .filter_text {
+    padding: 0 7px;
+}
+.filter_select_header .check_uncheck_btn {
+    font-size: 12px;
+    padding: 0 6px;
+}
+.filter_select_header {
+    background: #dfd6c2;
+    display: flex;
+}
+mat-form-field .select_search_box{
+    background: #ffffff !important;
+    border-radius: 30px !important;
+    padding-left: 12px !important;
+    border-top: 0 !important;
+    padding-bottom: 8px !important;
+    padding-top: 4px !important;
+    margin-bottom: 0%;
+}
+.filter_select_header .mat-form-field-flex {
+    padding-top: 0 !important;
+    border-radius: 51pc;
+    margin: 7px 8px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+.label{
+    padding-bottom: 4px !important;
+}
+
+textarea.mat-input-element.cdk-textarea-autosize {
+    background-color: #ffffff;
+   
+    border: none;
+    height: 50px;
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 92% !important;
+    padding: 15px 15px;
+    box-shadow: #dfd6c2 3px 3px 3px 0px;;
+    background-color: white;
+}
+
+.mat-toolbar
+{
+  background-color: #fafafa;
+  display: block !important;
+  text-align: center;
+}
+
+.search {
+    background:#025599;
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    border-radius: 30px;
+    width: 143px;
+    font-size: 20px;
+    margin: 0px 5px;
+    box-shadow: 0px 8px 15px #888888;
+  }
+
+  
+.clear {
+    background:#a30303;
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    border-radius: 30px;
+    width: 143px;
+    font-size: 20px;
+    margin: 0px 5px;
+    box-shadow: 0px 8px 15px #888888;
+  }
+
+
+  
+
+  .main-content
+{
+
+  overflow: auto;
+  overflow-x: hidden;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color:#fff !important; 
+}
+
+
+.secondary-table-pagination table th {
+    background: #ffb81c;
+    font-size: 16px;
+    padding-right: 24px;
+    white-space: nowrap;
+    border-right: 1px solid #d6c7ec;
+    text-align: center;
+    font-weight: 700;
+    padding: 0px 25px;
+}
+
+
+table {
+ width: 100%;
+ white-space: nowrap;
+
+}
+
+.mat-paginator-user-role-permission{
+ width: 100%;
+ margin-left: 0 !important;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row
+{
+ padding: 0px;
+}
+
+.secondary-table-pagination{
+ overflow: auto;
+}
+
+.secondary-table-pagination td{border: 1px solid #d6c7ec;
+}
+
+.secondary-table-pagination td{
+    text-align: left;
+    border-right: 1px solid #d6c7ec;
+    text-align: center;
+    font-weight: 600;
+    padding: 0px 25px;
+}
+
+.profileImageList{
+ width: 50px;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ padding-left: 0;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row
+{
+ padding: 0 !important;
+}
+
+.crud-btns{
+    width: 30px;
+    padding:5px 5px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5b5650;
+    background-clip: padding-box;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px rgba(199, 197, 197, 0.25);
+}
+
+::-webkit-scrollbar-button:single-button {
+    display: block;
+    border-style: solid;
+    height: 13px;
+    width: 16px;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid #5b5650;
+    border-top: 0px solid transparent;
+}
+ /*Left*/
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right:8px solid #5b5650;
+    border-left: 0px solid transparent;
+}
+
+/*Right*/
+::-webkit-scrollbar-button:single-button:horizontal:increment{
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 8px solid #5b5650;
+    border-right: 0px solid transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    border-color: transparent transparent #777777 transparent;
+}
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid #5b5650;
+    border-bottom: 0px solid transparent;
+}
+
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+    border-color: #777777 transparent transparent transparent;
+}
+
+
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #5b5656;
+}
+
+.actionImage{
+    width: 30px;
+    cursor: pointer;
+}
+
+input.input, input.inputt {
+    height: 48px;
+    
+    border: 1px solid #cccccc;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    outline: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    padding: 13px 15px;
+    font-weight: 500;
+    width: 90%;
+}  
+
+.btn-success{
+    border-radius: 25px;
+    font-size: 15px;
+    margin: 10px;
+    width: 133px;
+}
+
+
+.datepicker{
+    height: 50px;
+    outline: none;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    margin-left: 12px;
+    padding: 13px 15px;
+    font-weight: 500;
+    width: 90%;
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: white;
+  }
+  
+  .datepicker .bs-datepicker-head {
+    background-color: #ffb81c !important;
+  }

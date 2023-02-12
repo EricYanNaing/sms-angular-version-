@@ -1,0 +1,105 @@
+<div class="container-fluid p-3">
+    <!-- <div class="d-flex justify-content-between  pb-2">
+      <h4>User Role Permission Listing</h4>
+      <button
+      matTooltip="Filter" matTooltipClass="example-tooltip-red"
+      aria-label="Button that displays a tooltip when focused or hovered over"
+       mat-button class="icon-tooltip" aria-label="Add event">
+  
+  
+       <span class="material-icons icons custom-icon">
+           <img src="assets/img/Icon/Filter.svg"   class="crud-btns"  alt="Filter Icon" (click)="openDialog()">
+       </span>
+  
+      </button>
+      <img src="assets/img/Icon/Add pattern.svg" alt="" class="crud-btns" matTooltip="Create New"
+        aria-label="Button that displays a tooltip when focused or hovered over" [routerLink]="'./create-user-role-permission'">
+    </div> -->
+    <div class="d-flex justify-content-between  pb-2 ">
+      <h4 class="font-w600 title m-2 mr-auto ">SMS White List Listing</h4>
+      <div class="d-flex justify-content-between  align-items-center">
+        <div class="search-form">
+          <input type="text" name="search" placeholder="Search" class="search-bar" autocomplete="off">
+       </div>
+        <img  class="crud-btns" matTooltip="Filter"
+        aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" [routerLink]="'./filter-sms-white-list'">
+        <img class="crud-btns" matTooltip="Excel Download"
+        aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/excel.svg" alt="">
+       
+      </div>
+    </div>
+  
+  <!-- table -->
+  <div class="secondary-table-pagination">
+    <table mat-table [dataSource]="dataSource">
+  
+     
+ 
+      <ng-container matColumnDef="stop">
+        <th mat-header-cell *matHeaderCellDef> Stop Type</th>
+        <td mat-cell *matCellDef="let element"> {{element.stop}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="account">
+        <th mat-header-cell *matHeaderCellDef> Account Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.account}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="ServiceType">
+        <th mat-header-cell *matHeaderCellDef> SMS Service Type</th>
+        <td mat-cell *matCellDef="let element"> {{element.ServiceType}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="operatorName">
+        <th mat-header-cell *matHeaderCellDef>Operator Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.operatorName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="osType">
+        <th mat-header-cell *matHeaderCellDef>OS Type</th>
+        <td mat-cell *matCellDef="let element"> {{element.osType}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="osVersion">
+        <th mat-header-cell *matHeaderCellDef> OS Version</th>
+        <td mat-cell *matCellDef="let element"> {{element.osVersion}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="okApp">
+        <th mat-header-cell *matHeaderCellDef> OK$ App Version </th>
+        <td mat-cell *matCellDef="let element"> {{element.okApp}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="buildNumber">
+        <th mat-header-cell *matHeaderCellDef>Build Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.buildNumber}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="noOfAcc">
+        <th mat-header-cell *matHeaderCellDef> Number Of Account Count </th>
+        <td mat-cell *matCellDef="let element"> {{element.noOfAcc}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dateTime">
+        <th mat-header-cell *matHeaderCellDef> Date & Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateTime}} </td>
+      </ng-container>
+  
+     
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns,sticky:true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+  
+  </div>
+  
+  <mat-toolbar>
+    <mat-paginator class="mat-paginator-user-role-permission" [pageSizeOptions]="[10,20, 25, 50, 100]" showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </mat-toolbar>
+  </div>
+  
+
+

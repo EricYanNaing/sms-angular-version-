@@ -1,0 +1,182 @@
+<div>
+
+  <div class="modal-header">
+    <h4 class="">Filter</h4>
+    <i class="fa fa-close close" aria-hidden="true"></i>
+    <img src="assets/img/Icon/x.svg" alt="" class="crud-btns close" (click)="onDismiss()">
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <div class="content_outer">
+      <div>
+        <label for="">Select Period Date</label>
+      </div>
+      <div class="row rowMargin">
+
+        <div class="col-xs-12 col-12 col-md-6 form-group ">
+          <input type="text" placeholder="From Date - To Date" class="form-control datepicker" bsDaterangepicker
+            [bsConfig]="{ isAnimated: true, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"
+            [maxDate]="maxDate">
+            <mat-icon class="float-end" style="margin-top:-45px;margin-right:56px;">date_range</mat-icon>  
+        </div>
+
+      </div>
+
+      <div class="row rowMargin  mt-3">
+
+        <div class="col-12 col-md-6">
+
+          <div>
+            <label for="">Company Name</label>
+          </div>
+          <div fxLayout="row wrap">
+            <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+                fxLayoutAlign="space-between center">
+                <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+                  <!-- <mat-label class="label">Filter:</mat-label> -->
+                  <mat-form-field appearance="standard">
+                    <input matInput class="select_search_box" placeholder="Enter Keywords">
+                  </mat-form-field>
+                </div>
+                <button fxLayout="row" mat-button class="check_uncheck_btn">
+                  <mat-icon class="secondary-text s-5">
+                    check</mat-icon>Check All
+                </button>
+                <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+                  <mat-icon class="secondary-text s-5">
+                    clear</mat-icon>Uncheck All
+                </button>
+              </div>
+              <mat-option value="1">CGM</mat-option>
+              <mat-option value="2">OK$</mat-option>
+              <mat-option value="3">One Stop Mart</mat-option>
+              <mat-option value="4">OK Taxi</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="">Operator</label>
+          </div>
+
+          <div fxLayout="row wrap">
+            <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+                fxLayoutAlign="space-between center">
+                <!-- <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+                  <mat-label class="label">Filter:</mat-label>
+                  <mat-form-field appearance="standard">
+                    <input matInput class="select_search_box" placeholder="Enter Keywords">
+                  </mat-form-field>
+                </div> -->
+                <button fxLayout="row" mat-button class="check_uncheck_btn">
+                  <mat-icon class="secondary-text s-5">
+                    check</mat-icon>Check All
+                </button>
+                <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+                  <mat-icon class="secondary-text s-5">
+                    clear</mat-icon>Uncheck All
+                </button>
+              </div>
+              <mat-option value="1">MPT</mat-option>
+              <mat-option value="2">Ooredoo</mat-option>
+              <mat-option value="3">Telenor</mat-option>
+              <mat-option value="4">Mytel</mat-option>
+              <mat-option value="5">MEC</mat-option>
+            </mat-select>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="row rowMargin  mt-3">
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="">SMS Method</label>
+          </div>
+
+          <div fxLayout="row wrap">
+            <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+                fxLayoutAlign="space-between center">
+                <!-- <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+                  <mat-label class="label">Filter:</mat-label>
+                  <mat-form-field appearance="standard">
+                    <input matInput class="select_search_box" placeholder="Enter Keywords">
+                  </mat-form-field>
+                </div> -->
+                <button fxLayout="row" mat-button class="check_uncheck_btn">
+                  <mat-icon class="secondary-text s-5">
+                    check</mat-icon>Check All
+                </button>
+                <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+                  <mat-icon class="secondary-text s-5">
+                    clear</mat-icon>Uncheck All
+                </button>
+              </div>
+              <mat-option value="1">On Net</mat-option>
+              <mat-option value="2">Off Net</mat-option>
+
+            </mat-select>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="row rowMargin  mt-3 mb-5">
+
+        <div class="col-12 col-md-6">
+
+          <div>
+            <label for="">Group By</label>
+          </div>
+          <div fxLayout="row wrap">
+            <mat-select class="select2" multiple disableOptionCentering panelClass="myPanelClass" placeholder="Select">
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start" class="filter_select_header"
+                fxLayoutAlign="space-between center">
+                <div fxLayout="row" fxLayoutAlign="center center" class="filter_text">
+                  <!-- <mat-label class="label">Filter:</mat-label> -->
+                  <mat-form-field appearance="standard">
+                    <input matInput class="select_search_box" placeholder="Enter Keywords">
+                  </mat-form-field>
+                </div>
+                <button fxLayout="row" mat-button class="check_uncheck_btn">
+                  <mat-icon class="secondary-text s-5">
+                    check</mat-icon>Check All
+                </button>
+                <button fxLayout="row" mat-button class="check_uncheck_btn v-line">
+                  <mat-icon class="secondary-text s-5">
+                    clear</mat-icon>Uncheck All
+                </button>
+              </div>
+              <mat-option value="1">Company Base</mat-option>
+              <mat-option value="2">Operator Base</mat-option>
+              <mat-option value="3">Date Base</mat-option>
+              <mat-option value="4">Service Type Base</mat-option>
+              <mat-option value="5">SMS Method Base</mat-option>
+              <mat-option value="6">OS Type Base</mat-option>
+            </mat-select>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mt-5">
+          <mat-checkbox class="example-margin">Sum Total</mat-checkbox>
+        </div>
+        
+
+
+
+      </div>
+
+      <div class="button_group  text-center mt-5">
+        <button class="reset">RESET</button>
+        <button class="apply">APPLY</button>
+      </div>
+
+    </div>
+  </mat-dialog-content>
+</div>

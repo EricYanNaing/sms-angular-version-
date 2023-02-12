@@ -1,0 +1,56 @@
+.dialog{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+    }
+
+    .file{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+       
+      }
+
+    .modalSpan{
+        margin: 0%;
+        font-size: 18px;
+        padding: 9px 0 0 28px;
+        color: #fafafa;
+    }
+    .attachImg{
+        width: 40px;
+        cursor: pointer !important;
+    }
+    .userRolePermissionFormField2{
+        height: 20px;
+        outline: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 13px 15px;
+        font-weight: 500;
+        width: 90%;
+        /*select box css*/
+        border-radius: 25px;
+        border: 1px solid #cccccc;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+        background-color: white;
+      }
+
+      .uploadFile {
+        border: none;
+        width: 80%;
+        color: #02559b;
+        height: 35px;
+        padding: 7px 20px;
+        border-radius: 20px;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+      }
+      .clearIcon{
+        float: right;
+        padding-bottom: 8px;
+        color: #cd0000;
+        cursor: pointer;
+      }
+    

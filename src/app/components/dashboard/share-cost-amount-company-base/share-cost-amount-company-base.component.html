@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+        <div class="row mx-2 my-4  card shadow p-1 mb-1 bg-white rounded">
+            <div class="d-flex justify-content-between  pb-5 ">
+                <h5 class="font-w600 title m-2 mr-auto ">Share Cost Amount Company Base</h5>
+                <div class="d-flex dateW">
+                  <img  class="crud-btns" matTooltip="Filter" (click)="shareCostAmountCompanyBaseFilter()"
+                  aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/Filter.svg" alt="" >
+                          
+                    
+                  <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+                    <select matNativeControl required class=" mat-select-filter">
+                        <option value="option1">Monthly Wise Amount</option>
+                        <option value="2">Daily Wise Amount</option>
+                        <option value="3">Weekly Wise Amount</option>
+                        <option value="4">Quarterly Wise Amount</option>
+                        <option value="5" >Half Yearly Wise Amount</option>
+                        <option value="6" >Yearly Wise Amount</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="col-md-12 col-12 ">
+                    <div class=" chartSize">
+                        <ngx-charts-bar-vertical
+                        (window:resize)="onResize($event)"
+                        [scheme]="colorScheme2"
+                        [results]="shareCost"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [legendTitle]="legendTitle" 
+                        [view]="view"
+                        (select)="onSelect($event)">
+                        </ngx-charts-bar-vertical>
+                        <!-- [xAxisLabel]="xAxisLabel" -->
+                    </div>
+                
+    
+            </div>
+    
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+

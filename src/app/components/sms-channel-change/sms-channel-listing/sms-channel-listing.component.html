@@ -1,0 +1,66 @@
+<div class=" p-3">
+
+  <div class="d-flex justify-content-between align-items-center">
+    <h4 class="font-w600 title m-2 mr-auto "> SMS Channel Change Listing</h4>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="search-form">
+        <input type="text" name="search" placeholder="Search" class="search-bar" autocomplete="off">
+     </div>
+      <img class="crud-btns " matTooltip="Excel Download"
+      aria-label="Button that displays a tooltip when focused or hovered over" src="assets/img/Icon/excel.svg" alt="" >
+      <img src="assets/img/Icon/Add pattern.svg" alt="" class="crud-btns" matTooltip="Create New"
+      aria-label="Button that displays a tooltip when focused or hovered over" [routerLink]="'./create-sms-channel'">
+    </div>
+  </div>
+ 
+    <div class="table-pagination">
+      <table mat-table [dataSource]="dataSource">
+  
+        <!-- Position Column -->
+        <ng-container matColumnDef="SourceOperator">
+          <th mat-header-cell *matHeaderCellDef>Off Net Source Operator</th>
+          <td mat-cell *matCellDef="let element" style="width: 30%;">
+            {{element.SourceOperator}}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Destination">
+          <th mat-header-cell *matHeaderCellDef>Destination Operator</th>
+          <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.Destination}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ServiceType">
+            <th mat-header-cell *matHeaderCellDef>SMS Service Type</th>
+            <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.ServiceType}} </td>
+          </ng-container>
+
+  
+        <ng-container matColumnDef="DateTime">
+          <th mat-header-cell *matHeaderCellDef>Date & Time</th>
+          <td mat-cell *matCellDef="let element"  style="width: 30%;">{{element.DateTime}}
+          </td>
+        </ng-container>
+  
+  
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element"  style="width: 30%;">
+            
+              <img class="actionImage" [src]="element.action" />
+            
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns,sticky:true" ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+  
+    </div>
+    <mat-paginator class="mat-paginator-companyName" [pageSizeOptions]="[10,20, 25, 50, 100]" showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  

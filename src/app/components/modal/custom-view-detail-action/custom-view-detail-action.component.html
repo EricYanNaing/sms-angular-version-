@@ -1,0 +1,220 @@
+
+<div class="main-content" >
+    <h4 class="font-w600 title m-2 mr-auto ">Custom View Detail </h4>
+    <div class="row mx-1 my-4" >
+        <div class="col-md-4 ">
+            <div class="my-3">
+                <label for="">Select User Type </label>
+            </div>
+            <div>
+                <mat-select class="sel1" [(value)]="selectedUser" disabled disableOptionCentering panelClass="normalSelect" placeholder="Select">
+                    <mat-option value="1" >Non OK$ Top-Up Customer</mat-option>
+                    <mat-option value="2" ></mat-option>>
+                </mat-select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="my-3">
+                <label style="font-size: 14px;" for="">Select SMS For Non OK$ Top-Up Operator</label>
+            </div>
+            <div>
+                <mat-select class="sel1" disabled disableOptionCentering panelClass="normalSelect" placeholder="2 Selected">
+                    <mat-option value="1" >Non OK$ Top-Up Customer</mat-option>
+                    <mat-option value="2" ></mat-option>>
+                </mat-select>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    
+    <div class="row mx-1 my-4">
+        <div class="col-md-4">
+            <div class="my-3">
+                <label for="">SMS in English</label>
+            </div>
+            <mat-form-field appearance="fill" class="text-area">
+                <textarea matInput [formControl]="inputFormControl"   placeholder="Mingalar Par"
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <div class="my-3">
+                <label for="">SMS in Zawgyi</label>
+            </div>
+            <mat-form-field appearance="fill" class="text-area">
+                <textarea matInput [formControl]="inputFormControl"   placeholder="ဟိုင္း မဂၤလာပါ"
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <div class="my-3">
+                <label for="">SMS in Unicode</label>
+            </div>
+            <mat-form-field appearance="fill" class="text-area">
+                <textarea matInput  [formControl]="inputFormControl"   placeholder="ဟိုင်း မင်္ဂလာပါ"
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="row mx-1 my-4">
+        <div class="col-md-6">
+            <div class="my-3">
+                <label for="">Remarks</label>
+            </div>
+            <mat-form-field appearance="fill" class="text-area">
+                <textarea matInput [formControl]="inputFormControl"
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <div class="col-12 d-flex justify-content-end align-items-center create-user mt-5">
+                <button class="btn btn-primary mx-3" style="padding: 0.6rem 0;width: 150px;" type="button">
+                    <a class="text-decoration-none "><img src="../../../../../assets/img/Icon/Upload other-02.svg" class="arrowIcon mx-2" alt=""><span class="ml-2 text-white">Upload</span></a>
+                </button>
+                <button class="btn btn-primary mx-3" style="padding: 0.6rem 0;width: 150px;" type="button">
+                    <a class="text-decoration-none "><img src="../../../../../assets/img/Icon/Upload other-01.svg" class="arrowIcon mx-2" alt=""><span class="ml-2 text-white">Download Format</span></a>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mx-3 my-5 modalTable">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="fileRefNo">
+              <th mat-header-cell *matHeaderCellDef> File Reference Number</th>
+              <td mat-cell *matCellDef="let element"> {{element.fileRefNo}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="fileName">
+              <th mat-header-cell *matHeaderCellDef> File Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.fileName}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="mobileNoCount">
+              <th mat-header-cell *matHeaderCellDef> Mobile Number Count </th>
+              <td mat-cell *matCellDef="let element"> {{element.mobileNoCount}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="smsInEng">
+                <th mat-header-cell *matHeaderCellDef> SMS In English </th>
+                <td mat-cell *matCellDef="let element"> {{element.smsInEng}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="smsInZaw">
+                <th mat-header-cell *matHeaderCellDef> SMS In Zawgyi </th>
+                <td mat-cell *matCellDef="let element"> {{element.smsInZaw}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="smsInUni">
+                <th mat-header-cell *matHeaderCellDef> SMS In Unicode </th>
+                <td mat-cell *matCellDef="let element"> {{element.smsInUni}} </td>
+            </ng-container>
+    
+             <ng-container matColumnDef="smsInValueDatenTime">
+                <th mat-header-cell *matHeaderCellDef> SMS In Value Date & Time </th>
+                <td mat-cell *matCellDef="let element"> {{element.smsInValueDatenTime}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+    
+             <ng-container matColumnDef="view">
+                <th mat-header-cell *matHeaderCellDef> View </th>
+                <td mat-cell *matCellDef="let element"> <img class="actionImage" [src]="element.view" /> </td>
+            </ng-container>
+            
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </div>
+    
+    <div class="row my-5 mx-3">
+        <mat-radio-group aria-labelledby="example-radio-group-label" disabled class="example-radio-group mx-1"
+        [(ngModel)]="radioBtn">
+        <mat-radio-button class="example-radio-button pe-5 " *ngFor="let radio of radios" [value]="radio">
+          {{radio}}
+        </mat-radio-button>
+      </mat-radio-group> 
+        
+        <div class="col-md-6"></div>
+    </div>
+    
+    <div class="row mx-1 my-4" >
+        <div class="col-md-5 ">
+            <div class="my-3">
+                <label for="">Select Frequency <span class="red">*</span> </label>
+            </div>
+            <div>
+                <mat-select class="sel1" [(value)]="selected" disabled disableOptionCentering panelClass="normalSelect" placeholder="Select">
+                    <mat-option value="1" >Today</mat-option>
+                    <mat-option value="2" >Daily</mat-option>
+                    <mat-option value="3" >Weekly</mat-option>
+                    <mat-option value="4" >Monthly</mat-option>
+                    <mat-option value="5" >Quaterly</mat-option>
+                    <mat-option value="6" >Half-Yearly</mat-option>
+                    <mat-option value="7" >Yearly</mat-option>
+                </mat-select>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <br>
+            <div class="my-3">          
+                  <mat-form-field floatLabel="always">
+                    <mat-label class="labelInput">Select Period <span class="red">*</span></mat-label>
+                    <input matInput class="userRolePermissionFormField2" disabled value="Tue,10-May-2022 , 16:28 - Mon,06-Jun-2022 , 16:28" placeholder="Enter Value">
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+              </div>
+        </div>
+    
+    </div>
+    <div class="row mx-1 my-2">
+        <div class="col-md-5">
+          <br>
+          <div class="my-3">
+            <mat-form-field floatLabel="always">
+              <mat-label class="labelInput">Frequency Count <span class="red">*</span></mat-label>
+              <input matInput class="userRolePermissionFormField2" value="5" disabled placeholder="Enter Value">
+              <mat-icon matSuffix></mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5 ngx-timepicker-field-example">
+          <span class="CustomFormLabel">
+            Select Period Time (24 hours) <span class="red">*</span>
+          </span>
+          <div class="d-flex">
+            <ngx-timepicker-field class="" [controlOnly]="true" [disabled]="true" [format]="24" [defaultTime]="'13:11'">
+            </ngx-timepicker-field>
+            <ngx-timepicker-field class="" [controlOnly]="true" [disabled]="true" [format]="24" [defaultTime]="'19:41'">
+            </ngx-timepicker-field>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    
+    
+    <mat-toolbar>
+        <div class="button_group">
+          <button class="cancel"  (click)="onDismiss()">Back</button>
+          <button class="delete" [routerLink]="'../'"> Delete</button>
+        </div>
+    </mat-toolbar>
+    
+    

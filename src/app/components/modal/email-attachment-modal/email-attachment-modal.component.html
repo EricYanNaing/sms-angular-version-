@@ -1,0 +1,87 @@
+<div class="main-content1">
+    <mat-dialog-content class="mat-typography">
+       
+            <div class="content_outer">
+                <div class="row mx-2 my-2">
+                    <div class="col-xl-8 col-md-8 col-8">
+                        <p class="modalSpan text-center">Close</p>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-4">
+                        <div class="file btn btn-lg " style=" padding: 0%;">
+                            <img src="assets/img/Icon/Email/Close.svg" matTooltip="Filter" class="attachImg" style="padding-bottom: 0.4em;" alt="" (click)="onDismiss()">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mx-2 my-2">
+                    <div class="col-xl-8 col-md-8 col-8">
+                        <p class="modalSpan text-center">Files</p>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-4">
+                        <mat-form-field  panelClass="emailUploadIcon" class="InputClass">
+                            <input matInput hidden [readonly]="true" style="background-color: transparent;" accept="">
+                            <input hidden (change)="onSelectFile($event)" #file multiple accept="" class="input " type="file" placeholder="Upload Profile Image">
+                            <img src="assets/img/Icon/Email/Files.svg" style=" padding: 0%;" matTooltip="Filter" class="attachImg upload" alt=""  (click)="file.click()">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row mx-2 my-2">
+                    <div class="col-xl-8 col-md-8 col-8">
+                        <p class="modalSpan text-center">Capture</p>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-4">
+                        <mat-form-field  panelClass="emailUploadIcon" class="InputClass">
+                            <input matInput hidden [readonly]="true" style="background-color: transparent;" accept="image/*;capture=camera">
+                            <input hidden (change)="onSelectFile($event)" #capture multiple accept="image/*;capture=camera" class="input " type="file" placeholder="Upload Profile Image">
+                            <img src="assets/img/Icon/Email/Camera.svg" style=" padding: 0%;" matTooltip="Filter" class="attachImg upload" alt=""  (click)="capture.click()">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row mx-2 my-2">
+                    <div class="col-xl-8 col-md-8 col-8">
+                        <p class="modalSpan text-center">Record</p>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-4">
+                        <mat-form-field  panelClass="emailUploadIcon" class="InputClass">
+                            <input matInput hidden [readonly]="true" style="background-color: transparent;" multiple accept=".jpg">
+                            <input hidden (change)="onSelectFile($event)" #record multiple accept=".jpg" multiple class="input " type="file" placeholder="Upload Profile Image">
+                            <img src="assets/img/Icon/Email/Record.svg" style=" padding: 0%;" matTooltip="Filter" class="attachImg upload" alt=""  (click)="record.click()">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row mx-2 my-2">
+                    <div class="col-xl-8 col-md-8 col-8">
+                        <p class="modalSpan text-center">Video</p>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-4">
+                        <mat-form-field  panelClass="emailUploadIcon" class="InputClass">
+                            <input matInput hidden [readonly]="true" style="background-color: transparent;" accept="video/mp4,video/x-m4v,video/*">
+                            <input hidden (change)="onSelectFile($event)" #video multiple accept="video/mp4,video/x-m4v,video/*" class="input " type="file" placeholder="Upload Profile Image">
+                            <img src="assets/img/Icon/Email/Video.svg" style=" padding: 0%;" matTooltip="Filter" class="attachImg upload" alt=""  (click)="video.click()">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row mx-2 my-2">
+                    <div class="col-xl-8 col-md-8 col-8">
+                        <p class="modalSpan text-center">Image</p>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-4">
+                        <mat-form-field  panelClass="emailUploadIcon" class="InputClass">
+                            <input matInput hidden [readonly]="true" style="background-color: transparent;" accept="image/x-png,image/gif,image/jpeg">
+                            <input hidden (change)="onSelectFile($event)" #image multiple accept="image/x-png,image/gif,image/jpeg" class="input " type="file" placeholder="Upload Profile Image">
+                            <img src="assets/img/Icon/Email/Picture.svg" style=" padding: 0%;" matTooltip="Filter" class="attachImg upload" alt=""  (click)="image.click()">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row mx-2 my-2">
+                    <div class="col-xl-8 col-md-8 col-8">
+                        <p class="modalSpan text-center">Attachment</p>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-4">
+                            <img src="assets/img/Icon/Email/Attachment.svg" style=" padding: 0%;" matTooltip="Filter" class="attachImg upload" alt="">
+                    </div>
+                </div>
+            
+            </div>
+      </mat-dialog-content>
+</div>
+
